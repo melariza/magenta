@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Deep Roll</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Righteous'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <div id="vis-wrap">
+  <div id="vis-bg"></div>
+  <div id="vis"></div>
+</div>
+<div id="ui">
+  <div class="button-row">
+    <button class="key" value="C4">C</button>
+    <button class="key" value="G3">G</button>
+    <button class="key" value="D4">D</button>
+    <button class="key" value="A3">A</button>
+    <button class="key" value="E4">E</button>
+    <button class="key" value="B3">B</button>
+    <button class="key" value="F#4">F&sharp;</button>
+    <button class="key" value="C#4">D&flat;</button>
+    <button class="key" value="G#3">A&flat;</button>
+    <button class="key" value="D#4">E&flat;</button>
+    <button class="key" value="A#3">B&flat;</button>
+    <button class="key" value="F4">F</button>
+  </div>
+  <div class="button-row">
+    <button class="mode" value="0">Ionian</button>
+    <button class="mode" value="1">Dorian</button>
+    <button class="mode" value="2">Phrygian</button>
+    <button class="mode" value="3">Lydian</button>
+    <button class="mode" value="4">Mixolydian</button>
+    <button class="mode" value="5">Aeolian</button>
+    <button class="mode" value="6">Locrian</button>
+  </div>
+</div>
+<div id="loading">
+  Loading...
+</div>
+<footer>
+  <select id="output">
+    <option value="internal">Internal output</option>
+  </select>
+  <p>
+    Powered by Magenta's <a href="https://github.com/tensorflow/magenta/tree/master/magenta/models/improv_rnn">Improv RNN</a>,
+    <a href="https://deeplearnjs.org/">deeplearn.js</a>, and <a href="https://tonejs.github.io/">Tone.js</a>.
+  </p>
+</footer>
+  <script src='https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/tone@0.12.54/build/Tone.min.js'></script>
+<script src='https://unpkg.com/deeplearn@0.4.1/dist/deeplearn.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/web-animations-js@2.3.1/web-animations.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/startaudiocontext@1.2.1/StartAudioContext.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/babel-regenerator-runtime@6.5.0/runtime.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/webmidi@2.0.0/webmidi.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

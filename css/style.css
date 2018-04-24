@@ -1,0 +1,189 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+body {
+  perspective: 10px;
+  font-family: 'Righteous', cursive;
+}
+
+/* Backgrounds from https://uigradients.com */
+
+body.key-9 {
+  background: #005AA7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #FFFDE4, #005AA7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #FFFDE4, #005AA7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+body.key-4 {
+  background: #D3CCE3;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+body.key-11 {
+  background: #ADA996;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+body.key-6 {
+  background: #C9D6FF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+body.key-1 {
+  background: #d9a7c7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #fffcdc, #d9a7c7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #fffcdc, #d9a7c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+body.key-8 {
+  background: #1c92d2;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #f2fcfe, #1c92d2);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #f2fcfe, #1c92d2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+body.key-3 {
+  background: #4AC29A;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #BDFFF3, #4AC29A);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #BDFFF3, #4AC29A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+body.key-10 {
+  background: #A1FFCE;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #FAFFD1, #A1FFCE);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #FAFFD1, #A1FFCE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+body.key-5 {
+  background: #E0EAFC;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+body.key-0 {
+  background: #8e9eab;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+body.key-7 {
+  background: #abbaab;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #ffffff, #abbaab);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #ffffff, #abbaab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+body.key-2 {
+  background: #C9FFBF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #FFAFBD, #C9FFBF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #FFAFBD, #C9FFBF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#vis-wrap, #ui {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100vh;
+}
+#vis-wrap {
+  transform-origin: 50% 100%;
+  transform: rotateX(5deg);
+  backface-visibility: hidden;
+}
+#vis {
+  position: absolute;
+  left: -200px;
+  bottom: 0;
+  right: -200px;
+  top: -1500px;
+  overflow: hidden;
+  display: flex;
+  box-shadow: 0px 0px 100px rgba(50, 50, 50, 0.1);
+}
+#vis-bg {
+  position: absolute;
+  left: -550px;
+  bottom: 0;
+  right: -550px;
+  top: -500px;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0));
+}
+.note {
+  flex: 1;
+  position: relative;
+  border-left: 1px solid rgba(34, 34, 34, 0.2);
+}
+.play {
+  position: absolute;
+  bottom: -9px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: #E91E63;
+}
+
+
+#ui {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  padding: 10vmin 20vmin;
+}
+@media (max-width: 1024px) {
+  #ui {
+    padding: 10vmin 0vmin;
+  }
+}
+
+.button-row {
+  display: flex;
+  padding: 5px;
+}
+.button-row button {
+  flex: 1;
+}
+button {
+  height: 45px;
+  margin: 0;
+  background: none;
+  border: 1px solid rgba(34, 34, 34, 0.2);
+  border-right-width: 0;
+  font-size: 16px;
+  color: rgba(34, 34, 34, 0.9);
+  outline: none;
+  font-family: 'Righteous', cursive;
+}
+@media (max-width: 768px) {
+  button {
+    font-size: 12px;
+    padding: 0;
+  }
+}
+
+button.current {
+  background-color:  rgba(34, 34, 34, 0.2);
+}
+button.pending {
+  animation: pendingFlash linear 1s infinite;
+}
+button:last-child {
+  border-right-width: 1px;
+}
+
+#loading {
+  position: absolute;
+  top: 50vh;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+}
+
+footer {
+  padding-top: 120vh;
+  padding-bottom: 20vh;
+  line-height: 32px;
+  text-align: center;
+  font-size: 16px;
+}
+footer a, footer a:visited {
+  color: black;
+}
+
+@keyframes pendingFlash {
+	0% { background-color: rgba(255, 255, 255, 0.8); } 
+	100% { background-color:  rgba(255, 255, 255, 0.1); }
+}
